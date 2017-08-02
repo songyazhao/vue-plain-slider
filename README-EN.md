@@ -219,7 +219,6 @@ export default {
 | transition-mode      | `Boolean` | `true`      	| Disable advance effect for better performance.                                         |
 | loop                 | `Boolean` | `false`      | Set to true to enable continuous loop mode.                                            |
 | speed                | `Number`  | `500`        | Set transition duration of slider.                                                     |
-| ==================== | ========= | ============ | ====================================================================================== |
 
 ### Methods
 | Method            | Description              |
@@ -236,7 +235,6 @@ export default {
 | slide-revert-start | `pageNumber` `element` | Fire in the beginning of animation to revert slide (no change).        |
 | slide-revert-end   | `pageNumber` `element` | Will be fired after animation to revert slide (no change).             |
 | slider-move        | `offset`        				| Callback function, will be executed when user touch and move finger over Swiper and move it. Receives swiper instance and 'touchmove' event as an arguments. |
-| ================== | ================ | ============================================================================ |
 
 ## License
 

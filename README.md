@@ -220,7 +220,6 @@ export default {
 | transition-mode      | `Boolean` | `true`      	| 是否启用过渡,关闭过渡会提升相应的渲染性能。               |
 | loop                 | `Boolean` | `false`      | 是否轮播。                                                |
 | speed                | `Number`  | `500`        | 设置滑块之间的过渡时间。                                  |
-| ==================== | ========= | ============ | ========================================================= |
 
 ### Methods
 | Method            | Description              |
@@ -237,7 +236,6 @@ export default {
 | slide-revert-start | `pageNumber` `element` | 动画之前触发(没有变化)。              |
 | slide-revert-end   | `pageNumber` `element` | 动画之后触发(没有变化)。              |
 | slider-move        | `offset`         			| 回调函数,触摸移动过程中触发。         |
-| ================== | ====================== | ===================================== |
 
 ## License
 
