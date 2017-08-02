@@ -1,0 +1,28 @@
+{
+  "name": "vue-plain-slider",
+  "version": "1.0.0",
+  "author": "SongYazhao <59256790@qq.com>",
+  "license": "MIT",
+  "description": "A simple slider component for Vue.js",
+  "main": "src/Slider.vue",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/songyazhao/vue-plain-slider.git"
+  },
+  "keywords": [
+    "vue",
+    "vuejs",
+    "slider",
+    "swiper",
+    "components",
+    "carousel"
+  ],
+  "bugs": {
+    "url": "https://github.com/songyazhao/vue-plain-slider/issues"
+  },
+  "homepage": "https://github.com/songyazhao/vue-plain-slider#readme",
+  "dependencies": {
+    "vue": "^2.3.3"
+  }
+}
