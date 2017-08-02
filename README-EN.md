@@ -209,25 +209,17 @@ export default {
 
 ## Api
 ### Properties
-| Name                 | Type      | Default      | Description                                                        |
-|----------------------|-----------|--------------|--------------------------------------------------------------------|
-| direction            | `String`  | `"vertical"` | Could be 'horizontal'(for horizontal slider) or 'vertical' (for vertical slider).
-																									|
-| align			           | `String`  | `"left"`			| Could be 'left'(align left) or 'right' (align right).
-																									|
-| mousewheel-control   | `Boolean` | `true`       | Set to true to enable navigation through slides using mouse wheel.
-																									|
-| pagination-visible   | `Boolean` | `false`      | Toggle (hide/true) pagination container visibility when click on Slider's container.
-																									|
-| pagination-clickable | `Boolean` | `false`      | If true then clicking on pagination button will cause transition to appropriate slide.
-																									|
-| transition-mode      | `Boolean` | `true`      	| Disable advance effect for better performance.
-																									|
-| loop                 | `Boolean` | `false`      | Set to true to enable continuous loop mode.
-																									|
-| speed                | `Number`  | `500`        | Set transition duration of slider.
-																									|
-| ==================== | ========= | ============ | =================== |
+| Name                 | Type      | Default      | Description                                                                            |
+|----------------------|-----------|--------------|----------------------------------------------------------------------------------------|
+| direction            | `String`  | `"vertical"` | Could be 'horizontal'(for horizontal slider) or 'vertical' (for vertical slider).      |
+| align			           | `String`  | `"left"`			| Could be 'left'(align left) or 'right' (align right).                                  |
+| mousewheel-control   | `Boolean` | `true`       | Set to true to enable navigation through slides using mouse wheel.                     |
+| pagination-visible   | `Boolean` | `false`      | Toggle (hide/true) pagination container visibility when click on Slider's container.   |
+| pagination-clickable | `Boolean` | `false`      | If true then clicking on pagination button will cause transition to appropriate slide. |
+| transition-mode      | `Boolean` | `true`      	| Disable advance effect for better performance.                                         |
+| loop                 | `Boolean` | `false`      | Set to true to enable continuous loop mode.                                            |
+| speed                | `Number`  | `500`        | Set transition duration of slider.                                                     |
+| ==================== | ========= | ============ | ====================================================================================== |
 
 ### Methods
 | Method            | Description              |
@@ -237,19 +229,15 @@ export default {
 | setPage(`Number`) | Set current page number. |
 
 ### Events
-| Name                            | Arguments | Description																										 |
-|--------------------|------------|----------------------------------------------------------------------------|
-| slide-change-start | `pageNumber` `element` | Fire in the beginning of animation to other slide (next or previous).
-																							|
-| slide-change-end   | `pageNumber` `element` | Will be fired after animation to other slide (next or previous).
-																							|
-| slide-revert-start | `pageNumber` `element` | Fire in the beginning of animation to revert slide (no change).
-																							|
-| slide-revert-end   | `pageNumber` `element` | Will be fired after animation to revert slide (no change).
-																							|
+| Name               | Arguments              | Description                                                            |
+|--------------------|------------------------|------------------------------------------------------------------------|
+| slide-change-start | `pageNumber` `element` | Fire in the beginning of animation to other slide (next or previous).  |
+| slide-change-end   | `pageNumber` `element` | Will be fired after animation to other slide (next or previous).       |
+| slide-revert-start | `pageNumber` `element` | Fire in the beginning of animation to revert slide (no change).        |
+| slide-revert-end   | `pageNumber` `element` | Will be fired after animation to revert slide (no change).             |
 | slider-move        | `offset`        				| Callback function, will be executed when user touch and move finger over Swiper and move it. Receives swiper instance and 'touchmove' event as an arguments. |
-| ================== | ================ | ============================ |
+| ================== | ================ | ============================================================================ |
 
 ## License
 
-MIT
+[MIT](https://github.com/songyazhao/vue-plain-slider/blob/master/LICENSE)

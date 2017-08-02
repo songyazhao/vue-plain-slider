@@ -212,46 +212,33 @@ export default {
 ### Properties
 | Name                 | Type      | Default      | Description                                               |
 |----------------------|-----------|--------------|-----------------------------------------------------------|
-| direction            | `String`  | `"vertical"` | 可选值 'horizontal'(水平滑块) 或者 'vertical'(垂直滑块)。
-																									|
-| align			           | `String`  | `"left"`			| 可选值 'left'(左对齐) 或者 'right'(右对齐)。
-																									|
-| mousewheel-control   | `Boolean` | `true`       | 设置为 true 使slider可以通过鼠标滚轮控制。
-																									|
-| pagination-visible   | `Boolean` | `false`      | 是否显示切换的分页 (hide/true)。
-																									|
-| pagination-clickable | `Boolean` | `false`      | 如果为 true 点击分页切换到对应的滑块。
-																									|
-| transition-mode      | `Boolean` | `true`      	| 是否启用过渡,关闭过渡会提升相应的渲染性能。
-																									|
-| loop                 | `Boolean` | `false`      | 是否轮播。
-																									|
-| speed                | `Number`  | `500`        | 设置滑块之间的过渡时间。
-																									|
-| ==================== | ========= | ============ | =================== |
+| direction            | `String`  | `"vertical"` | 可选值 'horizontal'(水平滑块) 或者 'vertical'(垂直滑块)。 |
+| align			           | `String`  | `"left"`			| 可选值 'left'(左对齐) 或者 'right'(右对齐)。              |
+| mousewheel-control   | `Boolean` | `true`       | 设置为 true 使slider可以通过鼠标滚轮控制。                |
+| pagination-visible   | `Boolean` | `false`      | 是否显示切换的分页 (hide/true)。                          |
+| pagination-clickable | `Boolean` | `false`      | 如果为 true 点击分页切换到对应的滑块。                    |
+| transition-mode      | `Boolean` | `true`      	| 是否启用过渡,关闭过渡会提升相应的渲染性能。               |
+| loop                 | `Boolean` | `false`      | 是否轮播。                                                |
+| speed                | `Number`  | `500`        | 设置滑块之间的过渡时间。                                  |
+| ==================== | ========= | ============ | ========================================================= |
 
 ### Methods
 | Method            | Description              |
 |-------------------|--------------------------|
-| next()            | 下一个滑块。           		|
-| prev()            | 上一个滑块。       				|
-| setPage(`Number`) | 跳到指定页数的滑块。			 |
+| next()            | 下一个滑块。             |
+| prev()            | 上一个滑块。             |
+| setPage(`Number`) | 跳到指定页数的滑块。     |
 
 ### Events
-| Name                            | Arguments | Description																										 |
-|--------------------|------------|----------------------------------------------------------------------------|
-| slide-change-start | `pageNumber` `element` | 动画之前触发(到下一个或上一个滑块)。
-                                        			|
-| slide-change-end   | `pageNumber` `element` | 动画之后触发(到下一个或上一个滑块)。
-                                        			|
-| slide-revert-start | `pageNumber` `element` | 动画之前触发(没有变化)。
-                                        			|
-| slide-revert-end   | `pageNumber` `element` | 动画之后触发(没有变化)。
-                                        			|
-| slider-move        | `offset`         			| 回调函数,触摸移动过程中触发。
-																							|
-| ================== | ====================== | ============================ |
+| Name                            | Arguments | Description                           |
+|--------------------|------------------------|---------------------------------------|
+| slide-change-start | `pageNumber` `element` | 动画之前触发(到下一个或上一个滑块)。  |
+| slide-change-end   | `pageNumber` `element` | 动画之后触发(到下一个或上一个滑块)。  |
+| slide-revert-start | `pageNumber` `element` | 动画之前触发(没有变化)。              |
+| slide-revert-end   | `pageNumber` `element` | 动画之后触发(没有变化)。              |
+| slider-move        | `offset`         			| 回调函数,触摸移动过程中触发。         |
+| ================== | ====================== | ===================================== |
 
 ## License
 
-MIT
+[MIT](https://github.com/songyazhao/vue-plain-slider/blob/master/LICENSE)
