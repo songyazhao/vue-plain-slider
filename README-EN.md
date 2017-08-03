@@ -235,7 +235,7 @@ export default {
 | slide-change-end   | `pageNumber` `element` | Will be fired after animation to other slide (next or previous).       |
 | slide-revert-start | `pageNumber` `element` | Fire in the beginning of animation to revert slide (no change).        |
 | slide-revert-end   | `pageNumber` `element` | Will be fired after animation to revert slide (no change).             |
-| slider-move        | `offset`               | Callback function, will be executed when user touch and move finger over Swiper and move it. Receives swiper instance and 'touchmove' event as an arguments. |
+| slider-move        | `offset`               | Callback function, will be executed when user touch and move finger over <br>Swiper and move it. Receives swiper instance and 'touchmove' event as an arguments. |
 | ------------------ | ---------------------- | ------------------- |
 
 ## License
