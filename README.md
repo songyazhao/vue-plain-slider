@@ -24,21 +24,21 @@ npm install --save vue-plain-slider
 > 完整实例
 ```html
 <template>
-	<Slider
-		ref="Slider"
-		direction="horizontal"
-		:mousewheel-control="true"
-		:performance-mode="true"
-		:pagination-visible="true"
-		:pagination-clickable="true"
-		:loop="true"
-		:speed="500"
-		@slide-change-start="onSlideChangeStart"
-		@slide-change-end="onSlideChangeEnd">
-			<div>Page 1</div>
-			<div>Page 2</div>
-			<div>Page 3</div>
-	</Slider>
+  <Slider
+    ref="Slider"
+    direction="horizontal"
+    :mousewheel-control="true"
+    :performance-mode="true"
+    :pagination-visible="true"
+    :pagination-clickable="true"
+    :loop="true"
+    :speed="500"
+    @slide-change-start="onSlideChangeStart"
+    @slide-change-end="onSlideChangeEnd">
+      <div>Page 1</div>
+      <div>Page 2</div>
+      <div>Page 3</div>
+  </Slider>
 </template>
 
 <script>
@@ -46,21 +46,21 @@ import Slider from 'vue-plain-slider'
 
 export default {
   name: 'slider-demo',
-	components: { Slider },
-	methods: {
-		onSlideChangeStart (currentPage, el) {
-			console.log('onSlideChangeStart', currentPage, el);
-		},
-		onSlideChangeEnd (currentPage, el) {
-			console.log('onSlideChangeEnd', currentPage, el);
-		}
-	}
+  components: { Slider },
+  methods: {
+    onSlideChangeStart (currentPage, el) {
+      console.log('onSlideChangeStart', currentPage, el);
+    },
+    onSlideChangeEnd (currentPage, el) {
+      console.log('onSlideChangeEnd', currentPage, el);
+    }
+  }
 }
 </script>
 
 <style scoped>
 .slider {
-	height: 300px;
+  height: 300px;
 }
 </style>
 ```
@@ -106,20 +106,20 @@ export default {
   components: {
     Slider
   },
-	data () {
-		return {
-			items: [{
+  data () {
+    return {
+      items: [{
           label: 'item1',
           isModify: false
-				}, {
-					label: 'item2',
+        }, {
+          label: 'item2',
           isModify: false
-				}, {
-					label: 'item3',
+        }, {
+          label: 'item3',
           isModify: false
-				}
-			]
-		}
+        }
+      ]
+    }
   },
   computed: {
     isShowMask() {
@@ -133,24 +133,24 @@ export default {
       return i
     }
   },
-	methods: {
-		onSlideChangeStart(currentPage, el) {
+  methods: {
+    onSlideChangeStart(currentPage, el) {
       let currentItem = this.items[el.dataset['index']]
 
       if (currentPage === 2)
         currentItem.isModify = true
       else if (currentPage === 1)
         currentItem.isModify = false
-		},
-		onSlideChangeEnd(currentPage, el) {},
-		onEdit(item, index) {},
+    },
+    onSlideChangeEnd(currentPage, el) {},
+    onEdit(item, index) {},
     onDelete(item, index) {
       this.items.splice(index, 1) // 删除对应数据
     },
     onReSlide() { //滑块重置
       this.$refs.Slider[this.currentIndex].setPage(1) // 调用子组件的setPage方法
     }
-	}
+  }
 }
 </script>
 
@@ -213,11 +213,11 @@ export default {
 | Name                 | Type      | Default      | Description                                               |
 |----------------------|-----------|--------------|-----------------------------------------------------------|
 | direction            | `String`  | `"vertical"` | 可选值 'horizontal'(水平滑块) 或者 'vertical'(垂直滑块)。 |
-| align			           | `String`  | `"left"`			| 可选值 'left'(左对齐) 或者 'right'(右对齐)。              |
+| align                | `String`  | `"left"`     | 可选值 'left'(左对齐) 或者 'right'(右对齐)。              |
 | mousewheel-control   | `Boolean` | `true`       | 设置为 true 使slider可以通过鼠标滚轮控制。                |
 | pagination-visible   | `Boolean` | `false`      | 是否显示切换的分页 (hide/true)。                          |
 | pagination-clickable | `Boolean` | `false`      | 如果为 true 点击分页切换到对应的滑块。                    |
-| transition-mode      | `Boolean` | `true`      	| 是否启用过渡,关闭过渡会提升相应的渲染性能。               |
+| transition-mode      | `Boolean` | `true`       | 是否启用过渡,关闭过渡会提升相应的渲染性能。               |
 | loop                 | `Boolean` | `false`      | 是否轮播。                                                |
 | speed                | `Number`  | `500`        | 设置滑块之间的过渡时间。                                  |
 
@@ -235,7 +235,7 @@ export default {
 | slide-change-end   | `pageNumber` `element` | 动画之后触发(到下一个或上一个滑块)。  |
 | slide-revert-start | `pageNumber` `element` | 动画之前触发(没有变化)。              |
 | slide-revert-end   | `pageNumber` `element` | 动画之后触发(没有变化)。              |
-| slider-move        | `offset`         			| 回调函数,触摸移动过程中触发。         |
+| slider-move        | `offset`               | 回调函数,触摸移动过程中触发。         |
 
 ## License
 

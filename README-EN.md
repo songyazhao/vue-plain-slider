@@ -23,21 +23,21 @@ npm install --save vue-plain-slider
 > Example - complete
 ```html
 <template>
-	<Slider
-		ref="Slider"
-		direction="horizontal"
-		:mousewheel-control="true"
-		:performance-mode="true"
-		:pagination-visible="true"
-		:pagination-clickable="true"
-		:loop="true"
-		:speed="500"
-		@slide-change-start="onSlideChangeStart"
-		@slide-change-end="onSlideChangeEnd">
-			<div>Page 1</div>
-			<div>Page 2</div>
-			<div>Page 3</div>
-	</Slider>
+  <Slider
+    ref="Slider"
+    direction="horizontal"
+    :mousewheel-control="true"
+    :performance-mode="true"
+    :pagination-visible="true"
+    :pagination-clickable="true"
+    :loop="true"
+    :speed="500"
+    @slide-change-start="onSlideChangeStart"
+    @slide-change-end="onSlideChangeEnd">
+      <div>Page 1</div>
+      <div>Page 2</div>
+      <div>Page 3</div>
+  </Slider>
 </template>
 
 <script>
@@ -45,21 +45,21 @@ import Slider from 'vue-plain-slider'
 
 export default {
   name: 'slider-demo',
-	components: { Slider },
-	methods: {
-		onSlideChangeStart (currentPage, el) {
-			console.log('onSlideChangeStart', currentPage, el);
-		},
-		onSlideChangeEnd (currentPage, el) {
-			console.log('onSlideChangeEnd', currentPage, el);
-		}
-	}
+  components: { Slider },
+  methods: {
+    onSlideChangeStart (currentPage, el) {
+      console.log('onSlideChangeStart', currentPage, el);
+    },
+    onSlideChangeEnd (currentPage, el) {
+      console.log('onSlideChangeEnd', currentPage, el);
+    }
+  }
 }
 </script>
 
 <style scoped>
 .slider {
-	height: 300px;
+  height: 300px;
 }
 </style>
 ```
@@ -105,20 +105,20 @@ export default {
   components: {
     Slider
   },
-	data () {
-		return {
-			items: [{
+  data () {
+    return {
+      items: [{
           label: 'item1',
           isModify: false
-				}, {
-					label: 'item2',
+        }, {
+          label: 'item2',
           isModify: false
-				}, {
-					label: 'item3',
+        }, {
+          label: 'item3',
           isModify: false
-				}
-			]
-		}
+        }
+      ]
+    }
   },
   computed: {
     isShowMask() {
@@ -132,24 +132,24 @@ export default {
       return i
     }
   },
-	methods: {
-		onSlideChangeStart(currentPage, el) {
+  methods: {
+    onSlideChangeStart(currentPage, el) {
       let currentItem = this.items[el.dataset['index']]
 
       if (currentPage === 2)
         currentItem.isModify = true
       else if (currentPage === 1)
         currentItem.isModify = false
-		},
-		onSlideChangeEnd(currentPage, el) {},
-		onEdit(item, index) {},
+    },
+    onSlideChangeEnd(currentPage, el) {},
+    onEdit(item, index) {},
     onDelete(item, index) {
       this.items.splice(index, 1) // 删除对应数据
     },
     onReSlide() { //滑块重置
       this.$refs.Slider[this.currentIndex].setPage(1) // 调用子组件的setPage方法
     }
-	}
+  }
 }
 </script>
 
@@ -212,14 +212,14 @@ export default {
 | Name                 | Type      | Default      | Description                                                                            |
 |----------------------|-----------|--------------|----------------------------------------------------------------------------------------|
 | direction            | `String`  | `"vertical"` | Could be 'horizontal'(for horizontal slider) or 'vertical' (for vertical slider).      |
-| align			           | `String`  | `"left"`			| Could be 'left'(align left) or 'right' (align right).                                  |
+| align                | `String`  | `"left"`     | Could be 'left'(align left) or 'right' (align right).                                  |
 | mousewheel-control   | `Boolean` | `true`       | Set to true to enable navigation through slides using mouse wheel.                     |
 | pagination-visible   | `Boolean` | `false`      | Toggle (hide/true) pagination container visibility when click on Slider's container.   |
 | pagination-clickable | `Boolean` | `false`      | If true then clicking on pagination button will cause transition to appropriate slide. |
-| transition-mode      | `Boolean` | `true`      	| Disable advance effect for better performance.                                         |
+| transition-mode      | `Boolean` | `true`       | Disable advance effect for better performance.                                         |
 | loop                 | `Boolean` | `false`      | Set to true to enable continuous loop mode.                                            |
 | speed                | `Number`  | `500`        | Set transition duration of slider.                                                     |
-| -------------------- | --------- | ------------ | -------------------------------------------------------------------------------------- |
+| -------------------- | --------- | ------------ | ------------------- |
 
 ### Methods
 | Method            | Description              |
@@ -235,8 +235,8 @@ export default {
 | slide-change-end   | `pageNumber` `element` | Will be fired after animation to other slide (next or previous).       |
 | slide-revert-start | `pageNumber` `element` | Fire in the beginning of animation to revert slide (no change).        |
 | slide-revert-end   | `pageNumber` `element` | Will be fired after animation to revert slide (no change).             |
-| slider-move        | `offset`        				| Callback function, will be executed when user touch and move finger over Swiper and move it. Receives swiper instance and 'touchmove' event as an arguments. |
-| ------------------ | ---------------------- | ---------------------------------------------------------------------- |
+| slider-move        | `offset`               | Callback function, will be executed when user touch and move finger over Swiper and move it. Receives swiper instance and 'touchmove' event as an arguments. |
+| ------------------ | ---------------------- | ------------------- |
 
 ## License
 
