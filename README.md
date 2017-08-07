@@ -5,7 +5,7 @@
 
 一个基于Vue的简单滑块组件
 
-[English](https://github.com/songyazhao/vue-plain-slider/blob/master/README-EN.md)
+[English Document](https://github.com/songyazhao/vue-plain-slider/blob/master/README-EN.md)
 
 ## 特性
 
@@ -68,7 +68,7 @@ export default {
 
 ## 更多Demo
 
-* [完整实例](https://github.com/songyazhao/vue-plain-slider/blob/master/demo/DEMO.vue)
+* [完整实例](https://github.com/songyazhao/vue-plain-slider/blob/master/demo/basic-DEMO.vue)
 
 * [如果你想做一个左滑删除的效果](https://github.com/songyazhao/vue-plain-slider/blob/master/demo/left-slider-delete-DEMO.vue)
 

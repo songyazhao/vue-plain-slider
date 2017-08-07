@@ -37,20 +37,20 @@ export default {
   components: {
     Slider
   },
-	data () {
-		return {
-			items: [{
+  data () {
+    return {
+      items: [{
           label: 'item1',
           isModify: false
-				}, {
-					label: 'item2',
+        }, {
+          label: 'item2',
           isModify: false
-				}, {
-					label: 'item3',
+        }, {
+          label: 'item3',
           isModify: false
-				}
-			]
-		}
+        }
+      ]
+    }
   },
   computed: {
     isShowMask() {
@@ -64,24 +64,24 @@ export default {
       return i
     }
   },
-	methods: {
-		onSlideChangeStart(currentPage, el) {
+  methods: {
+    onSlideChangeStart(currentPage, el) {
       let currentItem = this.items[el.dataset['index']]
 
       if (currentPage === 2)
         currentItem.isModify = true
       else if (currentPage === 1)
         currentItem.isModify = false
-		},
-		onSlideChangeEnd(currentPage, el) {},
-		onEdit(item, index) {},
+    },
+    onSlideChangeEnd(currentPage, el) {},
+    onEdit(item, index) {},
     onDelete(item, index) {
       this.items.splice(index, 1) // 删除对应数据
     },
     onReSlide() { //滑块重置
       this.$refs.Slider[this.currentIndex].setPage(1) // 调用子组件的setPage方法
     }
-	}
+  }
 }
 </script>
 

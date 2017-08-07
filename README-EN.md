@@ -5,7 +5,7 @@
 
 A simple slider component for Vue.js
 
-[Zh-CN](https://github.com/songyazhao/vue-plain-slider)
+[Zh-CN Document](https://github.com/songyazhao/vue-plain-slider)
 
 ## Features
 
@@ -68,7 +68,7 @@ export default {
 
 ## More demo
 
-* [Example - Complete](https://github.com/songyazhao/vue-plain-slider/blob/master/demo/DEMO.vue)
+* [Example - Complete](https://github.com/songyazhao/vue-plain-slider/blob/master/demo/basic-DEMO.vue)
 
 * [Example - The left slide to delete](https://github.com/songyazhao/vue-plain-slider/blob/master/demo/left-slider-delete-DEMO.vue)
 
