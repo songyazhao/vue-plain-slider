@@ -22,7 +22,7 @@ npm install --save vue-plain-slider
 
 ## 使用
 
-> 基础用法
+> [基础用法](https://github.com/songyazhao/vue-plain-slider/blob/master/demo/basic-DEMO.vue)
 ```html
 <template>
   <Slider
@@ -68,7 +68,7 @@ export default {
 
 ## 更多Demo
 
-* [完整实例](https://github.com/songyazhao/vue-plain-slider/blob/master/demo/basic-DEMO.vue)
+* [完整实例](https://github.com/songyazhao/vue-plain-slider/blob/master/demo/full-DEMO.vue)
 
 * [如果你想做一个左滑删除的效果](https://github.com/songyazhao/vue-plain-slider/blob/master/demo/left-slider-delete-DEMO.vue)
 

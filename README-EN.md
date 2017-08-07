@@ -22,7 +22,7 @@ npm install --save vue-plain-slider
 
 ## Usage
 
-> Example - Basic usage
+> [Example - Basic usage](https://github.com/songyazhao/vue-plain-slider/blob/master/demo/basic-DEMO.vue)
 ```html
 <template>
   <Slider
@@ -68,7 +68,7 @@ export default {
 
 ## More demo
 
-* [Example - Complete](https://github.com/songyazhao/vue-plain-slider/blob/master/demo/basic-DEMO.vue)
+* [Example - Complete](https://github.com/songyazhao/vue-plain-slider/blob/master/demo/full-DEMO.vue)
 
 * [Example - The left slide to delete](https://github.com/songyazhao/vue-plain-slider/blob/master/demo/left-slider-delete-DEMO.vue)
 
