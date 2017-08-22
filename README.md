@@ -70,6 +70,21 @@ export default {
 
 * [完整实例](https://github.com/songyazhao/vue-plain-slider/blob/master/demo/full-DEMO.vue)
 
+***垂直***
+![Vertical.gif](http://ohef3m3y6.bkt.clouddn.com/vue-plain-slider/Vertical.gif)
+
+***水平***
+![Horizontal.gif](http://ohef3m3y6.bkt.clouddn.com/vue-plain-slider/Horizontal.gif)
+
+***循环***
+![Loop-Mode.gif](http://ohef3m3y6.bkt.clouddn.com/vue-plain-slider/Loop-Mode.gif)
+
+***子元素不固定大小***
+![Different-Children-Size.gif](http://ohef3m3y6.bkt.clouddn.com/vue-plain-slider/Different-Children-Size.gif)
+
+***嵌套宫格式***
+![Nested-Grid-Slider.gif](http://ohef3m3y6.bkt.clouddn.com/vue-plain-slider/Nested-Grid-Slider.gif)
+
 * [如果你想做一个左滑删除的效果](https://github.com/songyazhao/vue-plain-slider/blob/master/demo/left-slider-delete-DEMO.vue)
 
 ![left-slider-delete.gif](http://ohef3m3y6.bkt.clouddn.com/vue-plain-slider/left-slider-delete.gif)

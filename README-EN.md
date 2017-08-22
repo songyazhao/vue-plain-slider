@@ -70,6 +70,21 @@ export default {
 
 * [Example - Complete](https://github.com/songyazhao/vue-plain-slider/blob/master/demo/full-DEMO.vue)
 
+***Vertical***
+![Vertical.gif](http://ohef3m3y6.bkt.clouddn.com/vue-plain-slider/Vertical.gif)
+
+***Horizontal***
+![Horizontal.gif](http://ohef3m3y6.bkt.clouddn.com/vue-plain-slider/Horizontal.gif)
+
+***Loop***
+![Loop-Mode.gif](http://ohef3m3y6.bkt.clouddn.com/vue-plain-slider/Loop-Mode.gif)
+
+***Different children size***
+![Different-Children-Size.gif](http://ohef3m3y6.bkt.clouddn.com/vue-plain-slider/Different-Children-Size.gif)
+
+***Nested grid***
+![Nested-Grid-Slider.gif](http://ohef3m3y6.bkt.clouddn.com/vue-plain-slider/Nested-Grid-Slider.gif)
+
 * [Example - The left slide to delete](https://github.com/songyazhao/vue-plain-slider/blob/master/demo/left-slider-delete-DEMO.vue)
 
 ![left-slider-delete.gif](http://ohef3m3y6.bkt.clouddn.com/vue-plain-slider/left-slider-delete.gif)
