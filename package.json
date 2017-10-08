@@ -1,7 +1,7 @@
 {
   "name": "vue-plain-slider",
-  "version": "1.1.0",
-  "author": "SongYazhao <59256790@qq.com>",
+  "version": "1.0.2",
+  "author": "SongYazhao <syazhao@foxmail.com>",
   "license": "MIT",
   "description": "A simple slider component for Vue.js",
   "main": "src/Slider.vue",
@@ -23,6 +23,10 @@
   },
   "homepage": "https://github.com/songyazhao/vue-plain-slider#readme",
   "dependencies": {
-    "vue": "^2.3.3"
+    "vue": ">=2.0.0"
+  },
+  "devDependencies": {
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3"
   }
 }
