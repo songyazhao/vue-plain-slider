@@ -39,7 +39,8 @@ export default {
   },
   data () {
     return {
-      items: [{
+      items: [
+        {
           label: 'item1',
           isModify: false
         }, {
@@ -53,10 +54,10 @@ export default {
     }
   },
   computed: {
-    isShowMask() {
+    isShowMask () {
       return this.items.some(item => item.isModify === true)
     },
-    currentIndex() {
+    currentIndex () {
       let i = false
       this.items.forEach((item, index) => {
         item.isModify === true && (i = index)
@@ -65,20 +66,17 @@ export default {
     }
   },
   methods: {
-    onSlideChangeStart(currentPage, el) {
+    onSlideChangeStart (currentPage, el) {
       let currentItem = this.items[el.dataset['index']]
 
-      if (currentPage === 2)
-        currentItem.isModify = true
-      else if (currentPage === 1)
-        currentItem.isModify = false
+      if (currentPage === 2) { currentItem.isModify = true } else if (currentPage === 1) { currentItem.isModify = false }
     },
-    onSlideChangeEnd(currentPage, el) {},
-    onEdit(item, index) {},
-    onDelete(item, index) {
+    onSlideChangeEnd (currentPage, el) { },
+    onEdit (item, index) { },
+    onDelete (item, index) {
       this.items.splice(index, 1) // 删除对应数据
     },
-    onReSlide() { //滑块重置
+    onReSlide () { // 滑块重置
       this.$refs.Slider[this.currentIndex].setPage(1) // 调用子组件的setPage方法
     }
   }
@@ -86,7 +84,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@import '//libs.cdnjs.net/animate.css/3.5.2/animate.min.css';
+@import "//libs.cdnjs.net/animate.css/3.5.2/animate.min.css";
 
 .slider {
   height: 82px;
@@ -98,7 +96,7 @@ export default {
     font-size: 18px;
     background-color: white;
     box-sizing: border-box;
-    border: 1px solid #E8E8E8;
+    border: 1px solid #e8e8e8;
     display: flex;
     align-items: center;
     span {
@@ -118,10 +116,10 @@ export default {
       flex: 1;
       text-align: center;
       &[role="edit"] {
-        background-color: #D1D1D1;
+        background-color: #d1d1d1;
       }
       &[role="delete"] {
-        background-color: #FF5A60;
+        background-color: #ff5a60;
       }
     }
   }

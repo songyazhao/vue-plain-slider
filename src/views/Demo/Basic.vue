@@ -23,11 +23,11 @@ export default {
   name: 'slider-demo',
   components: { Slider },
   methods: {
-    onSlideChangeStart (currentPage, el) {
-      console.log('onSlideChangeStart', currentPage, el);
+    onSlideChangeStart(currentPage, el) {
+      console.log('onSlideChangeStart', currentPage, el)
     },
-    onSlideChangeEnd (currentPage, el) {
-      console.log('onSlideChangeEnd', currentPage, el);
+    onSlideChangeEnd(currentPage, el) {
+      console.log('onSlideChangeEnd', currentPage, el)
     }
   }
 }
@@ -38,4 +38,3 @@ export default {
   height: 300px;
 }
 </style>
-
