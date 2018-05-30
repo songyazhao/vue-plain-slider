@@ -1,3 +1,6 @@
+/**
+ * Created by songyazhao on 2018/05/30.
+ */
 const { resolve } = require('path')
 
 module.exports = {

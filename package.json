@@ -4,15 +4,16 @@
   "author": "SongYazhao <syazhao@foxmail.com>",
   "license": "MIT",
   "description": "A simple slider component for Vue.js",
-  "main": "dist/index.js",
+  "main": "index.js",
   "private": false,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/songyazhao/vue-plain-slider.git"
   },
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "dev": "vue-cli-service serve",
+    "build:dev": "vue-cli-service build",
+    "build": "vue-cli-service build --target lib --name vue-plain-slider src/components/Slider/index.vue",
     "lint": "vue-cli-service lint"
   },
   "keywords": [
