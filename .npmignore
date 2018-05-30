@@ -1,14 +1,11 @@
-.DS_Store
 node_modules/
-npm-cache/
-dist/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Editor directories and files
-.idea
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
+docs/
+src/
+test/
+.idea/
+.babelrc
+.eslintrc.js
+.gitignore
+.npmignore
+.npmrc
+yarn.lock

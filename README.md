@@ -2,9 +2,9 @@
 
 [![vue](https://img.shields.io/badge/vue-2.0+-brightgreen.svg)](https://github.com/vuejs/vue)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/songyazhao/vue-plain-slider/blob/master/LICENSE)
-[![downloads](https://img.shields.io/npm/dt/vue-plain-slider.svg)](#)
+[![downloads](https://img.shields.io/npm/dt/vue-plain-slider.svg)](https://www.npmjs.com/package/vue-plain-slider)
 
-一个基于Vue的简单滑块组件
+一个基于Vue的简单滑块/轮播组件
 
 [English Document](https://github.com/songyazhao/vue-plain-slider/blob/master/README-EN.md)
 
@@ -17,13 +17,13 @@
 
 ## 安装
 
-```
-npm install --save vue-plain-slider
+```bash
+npm install --save vue-plain-slider # Or yarn add vue-plain-slider
 ```
 
 ## 使用
 
-> [基础用法](https://github.com/songyazhao/vue-plain-slider/blob/master/demo/basic-DEMO.vue)
+> [基础用法](https://github.com/songyazhao/vue-plain-slider/blob/master/src/views/Demo/Basic.vue)
 ```html
 <template>
   <Slider
@@ -69,7 +69,7 @@ export default {
 
 ## 更多Demo
 
-* [完整实例](https://github.com/songyazhao/vue-plain-slider/blob/master/demo/full-DEMO.vue)
+* [完整实例](https://github.com/songyazhao/vue-plain-slider/blob/master/src/views/Demo/Full.vue)
 
 *垂直*
 
@@ -91,22 +91,26 @@ export default {
 
 ![Nested-Grid-Slider.gif](http://ohef3m3y6.bkt.clouddn.com/vue-plain-slider/Nested-Grid-Slider.gif)
 
-* [如果你想做一个左滑删除的效果](https://github.com/songyazhao/vue-plain-slider/blob/master/demo/left-slider-delete-DEMO.vue)
+* [如果你想做一个左滑删除的效果](https://github.com/songyazhao/vue-plain-slider/blob/master/src/views/Demo/LeftSliderDelete.vue)
 
 ![left-slider-delete.gif](http://ohef3m3y6.bkt.clouddn.com/vue-plain-slider/left-slider-delete.gif)
 
 ## Api
 ### Properties
-| Name                 | Type      | Default      | Description                                               |
-|----------------------|-----------|--------------|-----------------------------------------------------------|
-| direction            | `String`  | `"vertical"` | 可选值 'horizontal'(水平滑块) 或者 'vertical'(垂直滑块)。 |
-| align                | `String`  | `"left"`     | 可选值 'left'(左对齐) 或者 'right'(右对齐)。              |
-| mousewheel-control   | `Boolean` | `true`       | 设置为 true 使slider可以通过鼠标滚轮控制。                |
-| pagination-visible   | `Boolean` | `false`      | 是否显示切换的分页 (hide/true)。                          |
-| pagination-clickable | `Boolean` | `false`      | 如果为 true 点击分页切换到对应的滑块。                    |
-| transition-mode      | `Boolean` | `true`       | 是否启用过渡,关闭过渡会提升相应的渲染性能。               |
-| loop                 | `Boolean` | `false`      | 是否轮播。                                                |
-| speed                | `Number`  | `500`        | 设置滑块之间的过渡时间。                                  |
+| Name                 | Type      | Default      | Description                                                 |
+|----------------------|-----------|--------------|-------------------------------------------------------------|
+| align                | `String`  | `"left"`     | 对齐方向，`direction`为`'horizontal'`时有效，可选 `'left'`、`'right'`。|
+| auto                 | `Boolean` | `false`      | 是否自动轮播。                                               |
+| curPage              | `Number`  | `1`          | 设置默认从第几个开始。                                        |
+| direction            | `String`  | `"vertical"` | 滑动方向，可选 `'horizontal'`(水平) 或者 `'vertical'`(垂直)。  |
+| dragEnable           | `Boolean` | `true`       | 是否启用拖拽。                                               |
+| mousewheel-control   | `Boolean` | `true`       | 设置为 `true` 使slider可以通过鼠标滚轮控制。                   |
+| pagination-visible   | `Boolean` | `false`      | 是否显示切换的分页 (hide/true)。                              |
+| pagination-clickable | `Boolean` | `false`      | 如果为 true 点击分页切换到对应的滑块。                         |
+| performance-mode     | `Boolean` | `true`       | 是否启用过渡,关闭过渡会提升相应的渲染性能。                     |
+| loop                 | `Boolean` | `false`      | 是否启用轮播模式。                                            |
+| interval             | `Number`  | `3000`       | 触发下一次轮播的时间，`auto`为`true`时有效                     |
+| speed                | `Number`  | `500`        | 滑块之间的过渡时间。                                          |
 
 ### Methods
 | Method            | Description              |

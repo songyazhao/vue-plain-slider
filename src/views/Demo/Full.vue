@@ -85,32 +85,32 @@ import Slider from 'vue-plain-slider'
 export default {
   name: 'slider-demo',
   components: { Slider },
-  data() {
+  data () {
     return {
       slides: ['← o →', 'Page 2', 'Page 3', 'Page 4']
     }
   },
   methods: {
     onSlideChangeStart: function (currentPage, el) {
-      console.log('onSlideChangeStart', currentPage, el);
+      console.log('onSlideChangeStart', currentPage, el)
     },
     onSlideChangeEnd: function (currentPage, el) {
-      console.log('onSlideChangeEnd', currentPage, el);
+      console.log('onSlideChangeEnd', currentPage, el)
     },
     onSlideRevertStart: function (currentPage, el) {
-      console.log('onSlideRevertStart', currentPage, el);
+      console.log('onSlideRevertStart', currentPage, el)
     },
     onSlideRevertEnd: function (currentPage, el) {
-      console.log('onSlideRevertEnd', currentPage, el);
+      console.log('onSlideRevertEnd', currentPage, el)
     },
     onSliderMove: function (offset) {
-      console.log('onSliderMove', offset);
+      console.log('onSliderMove', offset)
     },
     prependSlide: function (slideText) {
-      this.slides.unshift(slideText);
+      this.slides.unshift(slideText)
     },
     appendSlide: function (slideText) {
-      this.slides.push(slideText);
+      this.slides.push(slideText)
     },
     removeSlide: function () { }
   }
@@ -194,4 +194,3 @@ h2, h3 {
 //   }
 // }
 </style>
-

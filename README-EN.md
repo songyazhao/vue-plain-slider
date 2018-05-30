@@ -2,7 +2,7 @@
 
 [![vue](https://img.shields.io/badge/vue-2.0+-brightgreen.svg)](https://github.com/vuejs/vue)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/songyazhao/vue-plain-slider/blob/master/LICENSE)
-[![downloads](https://img.shields.io/npm/dt/vue-plain-slider.svg)](#)
+[![downloads](https://img.shields.io/npm/dt/vue-plain-slider.svg)](https://www.npmjs.com/package/vue-plain-slider)
 
 A simple slider component for Vue.js
 
@@ -17,13 +17,13 @@ A simple slider component for Vue.js
 
 ## Install
 
-```
-npm install --save vue-plain-slider
+```bash
+npm install --save vue-plain-slider # Or yarn add vue-plain-slider
 ```
 
 ## Usage
 
-> [Example - Basic usage](https://github.com/songyazhao/vue-plain-slider/blob/master/demo/basic-DEMO.vue)
+> [Example - Basic usage](https://github.com/songyazhao/vue-plain-slider/blob/master/src/views/Demo/Basic.vue)
 ```html
 <template>
   <Slider
@@ -69,7 +69,7 @@ export default {
 
 ## More demo
 
-* [Example - Complete](https://github.com/songyazhao/vue-plain-slider/blob/master/demo/full-DEMO.vue)
+* [Example - Complete](https://github.com/songyazhao/vue-plain-slider/blob/master/src/views/Demo/Full.vue)
 
 *Vertical*
 
@@ -91,7 +91,7 @@ export default {
 
 ![Nested-Grid-Slider.gif](http://ohef3m3y6.bkt.clouddn.com/vue-plain-slider/Nested-Grid-Slider.gif)
 
-* [Example - The left slide to delete](https://github.com/songyazhao/vue-plain-slider/blob/master/demo/left-slider-delete-DEMO.vue)
+* [Example - The left slide to delete](https://github.com/songyazhao/vue-plain-slider/blob/master/src/views/Demo/LeftSliderDelete.vue)
 
 ![left-slider-delete.gif](http://ohef3m3y6.bkt.clouddn.com/vue-plain-slider/left-slider-delete.gif)
 
@@ -99,13 +99,17 @@ export default {
 ### Properties
 | Name                 | Type      | Default      | Description                                                                            |
 |----------------------|-----------|--------------|----------------------------------------------------------------------------------------|
-| direction            | `String`  | `"vertical"` | Could be 'horizontal'(for horizontal slider) or 'vertical' (for vertical slider).      |
-| align                | `String`  | `"left"`     | Could be 'left'(align left) or 'right' (align right).                                  |
-| mousewheel-control   | `Boolean` | `true`       | Set to true to enable navigation through slides using mouse wheel.                     |
+| align                | `String`  | `"left"`     | Align n Orientation, Could be `'left'` or `'right'`.                                   |
+| auto                 | `Boolean` | `false`      | Whether or not automatic carousel.                                                     |
+| curPage              | `Number`  | `1`          | Set the default start from which one.                                                  |
+| direction            | `String`  | `"vertical"` | Could be `'horizontal'`(for horizontal slider) or `'vertical'` (for vertical slider).  |
+| dragEnable           | `Boolean` | `true`       | Whether to enable drag and drop.                                                       |
+| mousewheel-control   | `Boolean` | `true`       | Set to `true` to enable navigation through slides using mouse wheel.                   |
 | pagination-visible   | `Boolean` | `false`      | Toggle (hide/true) pagination container visibility when click on Slider's container.   |
 | pagination-clickable | `Boolean` | `false`      | If true then clicking on pagination button will cause transition to appropriate slide. |
-| transition-mode      | `Boolean` | `true`       | Disable advance effect for better performance.                                         |
-| loop                 | `Boolean` | `false`      | Set to true to enable continuous loop mode.                                            |
+| performance-mode     | `Boolean` | `true`       | Disable advance effect for better performance.                                         |
+| loop                 | `Boolean` | `false`      | Set to `true` to enable continuous loop mode.                                          |
+| interval             | `Number`  | `3000`       | Trigger the next round of play time, ` auto ` is ` true ` available                    |
 | speed                | `Number`  | `500`        | Set transition duration of slider.                                                     |
 | ----------------------------------------------- |
 
