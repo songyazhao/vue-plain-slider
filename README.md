@@ -1,8 +1,9 @@
 # vue-plain-slider
 
-[![vue](https://img.shields.io/badge/vue-2.0+-brightgreen.svg)](https://github.com/vuejs/vue)
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/songyazhao/vue-plain-slider/blob/master/LICENSE)
+[![vue](https://img.shields.io/badge/vue-^2.1.0-brightgreen.svg)](https://github.com/vuejs/vue)
+[![Shippable](https://img.shields.io/shippable/5444c5ecb904a4b21567b0ff.svg)](https://www.npmjs.com/package/vue-plain-slider)
 [![downloads](https://img.shields.io/npm/dt/vue-plain-slider.svg)](https://www.npmjs.com/package/vue-plain-slider)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/songyazhao/vue-plain-slider/blob/master/LICENSE)
 
 一个基于Vue的简单滑块/轮播组件
 
