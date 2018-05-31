@@ -101,6 +101,7 @@ export default {
 |----------------------|-----------|--------------|-------------------------------------------------------------|
 | align                | `String`  | `"left"`     | 对齐方向，`direction`为`'horizontal'`时有效，可选 `'left'`、`'right'`。|
 | auto                 | `Boolean` | `false`      | 是否自动轮播。                                               |
+| asyncData            | `Array`、`Boolean` | `false` | 为`false`时表示数据不需要异步，当数据为异步获取或者需要动态改变的时，必须加此属性，值为与v-for绑定的同一字段 |
 | curPage              | `Number`  | `1`          | 设置默认从第几个开始。                                        |
 | direction            | `String`  | `"vertical"` | 滑动方向，可选 `'horizontal'`(水平) 或者 `'vertical'`(垂直)。  |
 | dragEnable           | `Boolean` | `true`       | 是否启用拖拽。                                               |

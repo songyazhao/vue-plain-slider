@@ -101,6 +101,7 @@ export default {
 |----------------------|-----------|--------------|----------------------------------------------------------------------------------------|
 | align                | `String`  | `"left"`     | Align n Orientation, Could be `'left'` or `'right'`.                                   |
 | auto                 | `Boolean` | `false`      | Whether or not automatic carousel.                                                     |
+| asyncData            | `Array`、`Boolean` | `false` | For `false` that do not need the asynchronous data, when the data is asynchronous dynamic access to or need to change, must add this attribute, value and `v-for` binding in the same field |
 | curPage              | `Number`  | `1`          | Set the default start from which one.                                                  |
 | direction            | `String`  | `"vertical"` | Could be `'horizontal'`(for horizontal slider) or `'vertical'` (for vertical slider).  |
 | dragEnable           | `Boolean` | `true`       | Whether to enable drag and drop.                                                       |

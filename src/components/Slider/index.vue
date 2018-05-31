@@ -48,6 +48,11 @@ export default {
       type: Boolean,
       default: false
     },
+    // 当为异步数据时需传solt循环的数组
+    asyncData: {
+      type: [Boolean, Array],
+      default: false
+    },
     // 可以设置默认第几个
     curPage: {
       type: Number,
@@ -112,31 +117,40 @@ export default {
       transitioning: false,
       slideEls: [],
       translateOffset: 0,
-      transitionDuration: 0
-    }
-  },
-  watch: {
-    currentPage(newVal) {
-      this.$emit('update:curPage', newVal)
+      transitionDuration: 0,
+      timer: null,
+      cloneEl: []
     }
   },
   mounted() {
     this._onTouchMove = this._onTouchMove.bind(this)
     this._onTouchEnd = this._onTouchEnd.bind(this)
-    this.slideEls = [].map.call(this.$refs.sliderWrap.children, el => el)
-    if (this.loop) {
-      this.$nextTick(() => {
-        this._createLoop()
-        this.setPage(this.currentPage, true)
-      })
-    } else {
-      this.setPage(this.currentPage)
-    }
-    if (this.auto) {
-      this._autoMove()
-    }
+    this.$watch('currentPage', val => this.$emit('update:curPage', val))
+    this.$watch('asyncData', this._sliderInit, { deep: true, immediate: true })
+  },
+  beforeDestroy() {
+    clearInterval(this.timer)
   },
   methods: {
+    _sliderInit(newAsyncData, oldAsyncData) {
+      if (!newAsyncData || (Array.isArray(newAsyncData) && newAsyncData.length > 0)) {
+        if (this.loop) {
+          this.cloneEl.forEach(el => el.remove())
+          this.$nextTick(() => {
+            this._createLoop()
+            this.setPage(this.currentPage, true)
+          })
+        } else {
+          this.setPage(this.currentPage)
+        }
+
+        if (this.auto) {
+          this._autoMove()
+        }
+
+        this.slideEls = [].map.call(this.$refs.sliderWrap.children, el => el)
+      }
+    },
     next() {
       let page = this.currentPage
       if (page < this.slideEls.length || this.loop) {
@@ -154,7 +168,6 @@ export default {
       }
     },
     setPage(page, noAnimation) {
-      let _ = this
       this.lastPage = this.currentPage
       if (page === 0) {
         this.currentPage = this.slideEls.length
@@ -165,12 +178,12 @@ export default {
       }
       if (this.loop) {
         if (this.delta === 0) {
-          this._setTranslate(_._getTranslateOfPage(this.lastPage))
+          this._setTranslate(this._getTranslateOfPage(this.lastPage))
         }
         setTimeout(() => {
-          _._setTranslate(_._getTranslateOfPage(page))
+          this._setTranslate(this._getTranslateOfPage(page))
           if (noAnimation) return
-          _._onTransitionStart()
+          this._onTransitionStart()
         }, 0)
       } else {
         this._setTranslate(this._getTranslateOfPage(page))
@@ -286,12 +299,14 @@ export default {
     },
     // 自动进行轮播
     _autoMove() {
+      clearInterval(this.timer)
+
       if (this.loop) {
-        setInterval(this.next, this.interval)
+        this.timer = setInterval(this.next, this.interval)
       } else {
         let i = 1
         const size = this.$el.children.length
-        setInterval(() => {
+        this.timer = setInterval(() => {
           this.setPage(i = i < size ? (i + 1) : 1)
         }, this.interval)
       }
@@ -304,6 +319,7 @@ export default {
       let duplicateLastChild = sliderWrapEl.lastElementChild.cloneNode(true)
       sliderWrapEl.insertBefore(duplicateLastChild, sliderWrapEl.firstElementChild)
       sliderWrapEl.appendChild(duplicateFirstChild)
+      this.cloneEl = [duplicateFirstChild, duplicateLastChild]
       this.translateOffset = -duplicateLastChild[propName]
     }
   }
