@@ -11,6 +11,7 @@ A simple slider component for Vue.js
 
 ## Features
 
+* For async data
 * Lightweight, no dependencies
 * Navigation, pager and arrows
 * Slider and Mouse support
