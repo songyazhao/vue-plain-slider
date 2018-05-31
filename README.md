@@ -1,8 +1,9 @@
 # vue-plain-slider
 
-[![vue](https://img.shields.io/badge/vue-2.0+-brightgreen.svg)](https://github.com/vuejs/vue)
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/songyazhao/vue-plain-slider/blob/master/LICENSE)
+[![vue](https://img.shields.io/badge/vue-^2.1.0-brightgreen.svg)](https://github.com/vuejs/vue)
+[![Shippable](https://img.shields.io/shippable/5444c5ecb904a4b21567b0ff.svg)](https://www.npmjs.com/package/vue-plain-slider)
 [![downloads](https://img.shields.io/npm/dt/vue-plain-slider.svg)](https://www.npmjs.com/package/vue-plain-slider)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/songyazhao/vue-plain-slider/blob/master/LICENSE)
 
 一个基于Vue的简单滑块/轮播组件
 
@@ -10,6 +11,7 @@
 
 ## 特性
 
+* 获取异步数据
 * 轻量级, 无其他依赖
 * 导航, 分页 和 箭头
 * 触摸、鼠标控制
@@ -101,6 +103,7 @@ export default {
 |----------------------|-----------|--------------|-------------------------------------------------------------|
 | align                | `String`  | `"left"`     | 对齐方向，`direction`为`'horizontal'`时有效，可选 `'left'`、`'right'`。|
 | auto                 | `Boolean` | `false`      | 是否自动轮播。                                               |
+| asyncData            | `Array`、`Boolean` | `false` | 为`false`时表示数据不需要异步，当数据为异步获取或者需要动态改变的时，必须加此属性，值为与v-for绑定的同一字段 |
 | curPage              | `Number`  | `1`          | 设置默认从第几个开始。                                        |
 | direction            | `String`  | `"vertical"` | 滑动方向，可选 `'horizontal'`(水平) 或者 `'vertical'`(垂直)。  |
 | dragEnable           | `Boolean` | `true`       | 是否启用拖拽。                                               |

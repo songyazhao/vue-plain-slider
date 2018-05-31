@@ -15,10 +15,16 @@
         <div v-for="(n, i) in [2, 3, 4]" :key="i">Page {{n}}</div>
     </Slider>
 
+    <h3>Append Child</h3>
+    <div id="append_child">
+      <button @click="appendSlide('New Page!')">Append child to the horizontal slider</button>
+    </div>
+
     <h3>Horizontal</h3>
     <Slider
       id="slider_horizontal"
       :pagination-visible="true"
+      :async-data="slides"
       direction="horizontal">
         <div v-for="(slideText, i) in slides" :key="i">{{slideText}}</div>
     </Slider>
@@ -31,11 +37,6 @@
       direction="horizontal">
         <div v-for="(slideText, i) in slides" :key="i">{{slideText}}</div>
     </Slider>
-
-    <!-- <h3>Append Child</h3>
-    <div id="append_child">
-      <button @click="appendSlide('New Page!')">Append child to the horizontal slider</button>
-    </div> -->
 
     <h3>Different children size</h3>
     <Slider id="slider_children_size">

@@ -1,8 +1,9 @@
 # vue-plain-slider
 
-[![vue](https://img.shields.io/badge/vue-2.0+-brightgreen.svg)](https://github.com/vuejs/vue)
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/songyazhao/vue-plain-slider/blob/master/LICENSE)
+[![vue](https://img.shields.io/badge/vue-^2.1.0-brightgreen.svg)](https://github.com/vuejs/vue)
+[![Shippable](https://img.shields.io/shippable/5444c5ecb904a4b21567b0ff.svg)](https://www.npmjs.com/package/vue-plain-slider)
 [![downloads](https://img.shields.io/npm/dt/vue-plain-slider.svg)](https://www.npmjs.com/package/vue-plain-slider)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/songyazhao/vue-plain-slider/blob/master/LICENSE)
 
 A simple slider component for Vue.js
 
@@ -10,6 +11,7 @@ A simple slider component for Vue.js
 
 ## Features
 
+* For async data
 * Lightweight, no dependencies
 * Navigation, pager and arrows
 * Slider and Mouse support
@@ -101,6 +103,7 @@ export default {
 |----------------------|-----------|--------------|----------------------------------------------------------------------------------------|
 | align                | `String`  | `"left"`     | Align n Orientation, Could be `'left'` or `'right'`.                                   |
 | auto                 | `Boolean` | `false`      | Whether or not automatic carousel.                                                     |
+| asyncData            | `Array`、`Boolean` | `false` | For `false` that do not need the asynchronous data, when the data is asynchronous dynamic access to or need to change, must add this attribute, value and `v-for` binding in the same field |
 | curPage              | `Number`  | `1`          | Set the default start from which one.                                                  |
 | direction            | `String`  | `"vertical"` | Could be `'horizontal'`(for horizontal slider) or `'vertical'` (for vertical slider).  |
 | dragEnable           | `Boolean` | `true`       | Whether to enable drag and drop.                                                       |
