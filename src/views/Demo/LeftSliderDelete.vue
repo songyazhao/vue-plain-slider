@@ -1,4 +1,4 @@
-<template>
+ <template>
   <div>
     <transition-group
       leave-active-class="animated fadeOutLeft">
@@ -7,7 +7,7 @@
         direction="horizontal"
         align="right"
         v-for="(item, index) in items"
-        :key="index"
+        :key="`ak_${index}`"
         :data-index="index"
         @slide-change-start="onSlideChangeStart"
         @slide-change-end="onSlideChangeEnd"

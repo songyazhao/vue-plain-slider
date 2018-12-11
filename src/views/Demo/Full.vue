@@ -24,6 +24,7 @@
     <Slider
       id="slider_horizontal"
       :pagination-visible="true"
+      :pagination-clickable="true"
       :async-data="slides"
       direction="horizontal">
         <div v-for="(slideText, i) in slides" :key="i">{{slideText}}</div>

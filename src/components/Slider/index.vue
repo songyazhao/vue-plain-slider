@@ -74,6 +74,7 @@ export default {
       type: Boolean,
       default: true
     },
+    // 是否启用过渡
     performanceMode: {
       type: Boolean,
       default: true
@@ -132,16 +133,21 @@ export default {
     clearInterval(this.timer)
   },
   methods: {
+    _setTranslateOffset(el) {
+      const propName = this.isHorizontal() ? 'clientWidth' : 'clientHeight'
+      this.translateOffset = -el[propName]
+    },
     _sliderInit(newAsyncData, oldAsyncData) {
       if (!newAsyncData || (Array.isArray(newAsyncData) && newAsyncData.length > 0)) {
         if (this.loop) {
           this.cloneEl.forEach(el => el.remove())
+
           this.$nextTick(() => {
             this._createLoop()
-            this.setPage(this.currentPage, true)
+            this._revert(true)
           })
         } else {
-          this.setPage(this.currentPage)
+          this._revert()
         }
 
         if (this.auto) {
@@ -149,10 +155,15 @@ export default {
         }
 
         this.slideEls = [].map.call(this.$refs.sliderWrap.children, el => el)
+
+        window.addEventListener('resize', () => { // resize after recalc in offset(fix: issue#8)
+          this.loop && this._setTranslateOffset(this.slideEls[0])
+          this._setTranslate(this._getTranslateOfPage(this.currentPage))
+        })
       }
     },
     next() {
-      let page = this.currentPage
+      const page = this.currentPage
       if (page < this.slideEls.length || this.loop) {
         this.setPage(page + 1)
       } else {
@@ -160,7 +171,7 @@ export default {
       }
     },
     prev() {
-      let page = this.currentPage
+      const page = this.currentPage
       if (page > 1 || this.loop) {
         this.setPage(page - 1)
       } else {
@@ -199,12 +210,14 @@ export default {
     },
     _onTouchStart(e) {
       if (!this.dragEnable) return
+
       this.startPos = this._getTouchPos(e)
       this.delta = 0
       this.startTranslate = this._getTranslateOfPage(this.currentPage)
       this.startTime = new Date().getTime()
       this.dragging = true
       this.transitionDuration = 0
+
       document.addEventListener('touchmove', this._onTouchMove, false)
       document.addEventListener('touchend', this._onTouchEnd, false)
       document.addEventListener('mousemove', this._onTouchMove, false)
@@ -212,10 +225,12 @@ export default {
     },
     _onTouchMove(e) {
       this.delta = this._getTouchPos(e) - this.startPos
+
       if (this.performanceMode) {
         this._setTranslate(this.startTranslate + this.delta)
         this.$emit('slider-move', this._getTranslate())
       }
+
       if (this.isVertical() || (this.isHorizontal() && Math.abs(this.delta) > 0)) {
         e.preventDefault()
       }
@@ -223,7 +238,9 @@ export default {
     _onTouchEnd(e) {
       this.dragging = false
       this.transitionDuration = this.speed
-      let isQuickAction = new Date().getTime() - this.startTime < 1000
+
+      const isQuickAction = new Date().getTime() - this.startTime < 1000
+
       if (this.delta < -100 || (isQuickAction && this.delta < -15)) {
         this.next()
       } else if (this.delta > 100 || (isQuickAction && this.delta > 15)) {
@@ -231,6 +248,7 @@ export default {
       } else {
         this._revert()
       }
+
       document.removeEventListener('touchmove', this._onTouchMove)
       document.removeEventListener('touchend', this._onTouchEnd)
       document.removeEventListener('mousemove', this._onTouchMove)
@@ -249,11 +267,11 @@ export default {
         if (this._isPageChanged()) e.preventDefault()
       }
     },
-    _revert() {
-      this.setPage(this.currentPage)
+    _revert(noAnimation) {
+      this.setPage(this.currentPage, noAnimation)
     },
     _getTouchPos(e) {
-      let key = this.isHorizontal() ? 'pageX' : 'pageY'
+      const key = this.isHorizontal() ? 'pageX' : 'pageY'
       return e.changedTouches ? e.changedTouches[0][key] : e[key]
     },
     _onTransitionStart() {
@@ -279,16 +297,16 @@ export default {
       return this.lastPage !== this.currentPage
     },
     _setTranslate(value) {
-      let translateName = this.isHorizontal() ? 'translateX' : 'translateY'
+      const translateName = this.isHorizontal() ? 'translateX' : 'translateY'
       this[translateName] = value
     },
     _getTranslate() {
-      let translateName = this.isHorizontal() ? 'translateX' : 'translateY'
+      const translateName = this.isHorizontal() ? 'translateX' : 'translateY'
       return this[translateName]
     },
     _getTranslateOfPage(page) {
       if (page === 0) return 0
-      let propName = this.isHorizontal() ? 'clientWidth' : 'clientHeight'
+      const propName = this.isHorizontal() ? 'clientWidth' : 'clientHeight'
       return -[].reduce.call(this.slideEls, (total, el, i) => {
         if (this.align === 'left') {
           return i > page - 2 ? total : total + el[propName]
@@ -313,14 +331,15 @@ export default {
     },
     // 创建循环滚动的Dom
     _createLoop() {
-      let propName = this.isHorizontal() ? 'clientWidth' : 'clientHeight'
-      let sliderWrapEl = this.$refs.sliderWrap
-      let duplicateFirstChild = sliderWrapEl.firstElementChild.cloneNode(true)
-      let duplicateLastChild = sliderWrapEl.lastElementChild.cloneNode(true)
+      const sliderWrapEl = this.$refs.sliderWrap
+      const duplicateFirstChild = sliderWrapEl.firstElementChild.cloneNode(true)
+      const duplicateLastChild = sliderWrapEl.lastElementChild.cloneNode(true)
+
       sliderWrapEl.insertBefore(duplicateLastChild, sliderWrapEl.firstElementChild)
       sliderWrapEl.appendChild(duplicateFirstChild)
+
       this.cloneEl = [duplicateFirstChild, duplicateLastChild]
-      this.translateOffset = -duplicateLastChild[propName]
+      this._setTranslateOffset(duplicateLastChild)
     }
   }
 }
