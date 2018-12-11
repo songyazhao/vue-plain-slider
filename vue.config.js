@@ -9,5 +9,6 @@ module.exports = {
     config
       .resolve
       .alias['vue-plain-slider'] = resolve(__dirname, './src/components/Slider')
-  }
+  },
+  productionSourceMap: false
 }

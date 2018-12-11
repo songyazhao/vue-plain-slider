@@ -1,6 +1,6 @@
 {
   "name": "vue-plain-slider",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": "SongYazhao <syazhao@foxmail.com>",
   "license": "MIT",
   "description": "A simple slider component for Vue.js",
@@ -13,7 +13,7 @@
   "scripts": {
     "dev": "vue-cli-service serve",
     "build:dev": "vue-cli-service build",
-    "build": "vue-cli-service build --target lib --name vue-plain-slider src/components/Slider/index.vue",
+    "build": "vue-cli-service build --target lib src/components/Slider/index.vue",
     "lint": "vue-cli-service lint"
   },
   "keywords": [

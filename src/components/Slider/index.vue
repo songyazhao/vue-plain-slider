@@ -138,13 +138,6 @@ export default {
       this.translateOffset = -el[propName]
     },
     _sliderInit(newAsyncData, oldAsyncData) {
-      const doResizeInit = () => {
-        window.addEventListener('resize', () => {
-          this._setTranslateOffset(this.cloneEl[1])
-          this._setTranslate(this._getTranslateOfPage(this.currentPage))
-        })
-      }
-
       if (!newAsyncData || (Array.isArray(newAsyncData) && newAsyncData.length > 0)) {
         if (this.loop) {
           this.cloneEl.forEach(el => el.remove())
@@ -152,7 +145,6 @@ export default {
           this.$nextTick(() => {
             this._createLoop()
             this._revert(true)
-            doResizeInit()
           })
         } else {
           this._revert()
@@ -163,6 +155,11 @@ export default {
         }
 
         this.slideEls = [].map.call(this.$refs.sliderWrap.children, el => el)
+
+        window.addEventListener('resize', () => { // resize after recalc in offset(fix: issue#8)
+          this.loop && this._setTranslateOffset(this.slideEls[0])
+          this._setTranslate(this._getTranslateOfPage(this.currentPage))
+        })
       }
     },
     next() {
